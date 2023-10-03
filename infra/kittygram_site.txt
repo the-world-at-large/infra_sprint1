@@ -1,5 +1,5 @@
-IP: 158.160.77.66;
-name_taski: https://wwwooowww.hopto.org;
-name_kittygram: https://kittttygrammm.hopto.org;
-login: admin;
-password: admin;
+IP: 158.160.77.66 ;
+name_taski: https://wwwooowww.hopto.org ;
+name_kittygram: https://kittttygrammm.hopto.org ;
+login: admin ;
+password: admin ;

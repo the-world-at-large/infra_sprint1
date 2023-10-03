@@ -1,22 +1,78 @@
+server {
+    server_name kittttygrammm.hopto.org;
+    server_tokens off;
 
-[Unit]
+    location /api/ {
+        proxy_pass https://127.0.0.1:8080;
+        client_max_body_size 20M;
+    }
 
-Description=gunicorn daemon
+    location /admin/ {
+        proxy_pass https://127.0.0.1:8080;
+        client_max_body_size 20M;
+    }
 
-After=network.target
+    location /media/ {
+        alias /var/www/infra_sprint1/media/;
+    }
+
+    location / {
+        root /var/www/infra_sprint1;
+        index index.html index.htm;
+        try_files $uri /index.html;
+    }
+
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/kittttygrammm.hopto.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/kittttygrammm.hopto.org/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 
-[Service]
+}
 
-User=yc-user
 
-WorkingDirectory=/home/yc-user/taski/backend/
+server {
+    if ($host = kittttygrammm.hopto.org) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
 
-ExecStart=/home/yc-user/taski/backend/venv/bin/gunicorn --bind 0.0.0.0:8000 backend.wsgi
+    listen 80;
+    server_name 158.160.77.66 kittttygrammm.hopto.org;
+    return 404; # managed by Certbot
 
-EnvironmentFile=/home/yc-user/taski/backend/.env/
 
-[Install]
 
-WantedBy=multi-user.target
 
+server {
+    server_name wwwooowww.hopto.org;
+    server_tokens off;
+
+    location /api/ {
+        proxy_pass https://127.0.0.1:8000;
+    }
+
+    location /admin/ {
+        proxy_pass https://127.0.0.1:8000;
+    }
+
+    location / {
+        root /var/www/taski;
+        index index.html index.htm;
+        try_files $uri /index.html;
+    }
+
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/wwwooowww.hopto.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/wwwooowww.hopto.org/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}

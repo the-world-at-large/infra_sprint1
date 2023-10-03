@@ -2,13 +2,18 @@ import os
 
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
+SECRET_KEY = 'b2vty58b00y&t9f@6*4cj!+vt@1@27652)q8jal=bhe5pdgnjp'
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = False
 
 ALLOWED_HOSTS = ['158.160.77.66', '127.0.0.1', 'localhost', 'kittttygrammm.hopto.org']
-
-SECRET_KEY = os.environ.get("SECRET_KEY")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -95,7 +100,7 @@ STATIC_URL = '/static_backend/'
 STATIC_ROOT = BASE_DIR / 'static_backend'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / '/var/www/kittygram/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
