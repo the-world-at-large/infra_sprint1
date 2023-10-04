@@ -3,12 +3,12 @@ server {
     server_tokens off;
 
     location /api/ {
-        proxy_pass https://127.0.0.1:8080;
+        proxy_pass http://127.0.0.1:8080;
         client_max_body_size 20M;
     }
 
     location /admin/ {
-        proxy_pass https://127.0.0.1:8080;
+        proxy_pass http://127.0.0.1:8080;
         client_max_body_size 20M;
     }
 
@@ -23,7 +23,7 @@ server {
     }
 
     access_log /var/log/nginx/access.log;
-    error_log /var/log/nginx/error.log;
+    error_log /var/log/nginx/error.log debug;
 
     listen 443 ssl; # managed by Certbot
     ssl_certificate /etc/letsencrypt/live/kittttygrammm.hopto.org/fullchain.pem; # managed by Certbot
@@ -41,9 +41,10 @@ server {
     } # managed by Certbot
 
     listen 80;
-    server_name 158.160.77.66 kittttygrammm.hopto.org;
+    server_name kittttygrammm.hopto.org;
     return 404; # managed by Certbot
 
+}
 
 
 
@@ -52,11 +53,11 @@ server {
     server_tokens off;
 
     location /api/ {
-        proxy_pass https://127.0.0.1:8000;
+        proxy_pass http://127.0.0.1:8000;
     }
 
     location /admin/ {
-        proxy_pass https://127.0.0.1:8000;
+        proxy_pass http://127.0.0.1:8000;
     }
 
     location / {
@@ -66,7 +67,7 @@ server {
     }
 
     access_log /var/log/nginx/access.log;
-    error_log /var/log/nginx/error.log;
+    error_log /var/log/nginx/error.log debug;
 
     listen 443 ssl; # managed by Certbot
     ssl_certificate /etc/letsencrypt/live/wwwooowww.hopto.org/fullchain.pem; # managed by Certbot
@@ -76,3 +77,4 @@ server {
 
 
 }
+
