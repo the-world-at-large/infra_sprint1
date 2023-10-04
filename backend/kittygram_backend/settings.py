@@ -7,8 +7,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SECRET_KEY = 'b2vty58b00y&t9f@6*4cj!+vt@1@27652)q8jal=bhe5pdgnjp'
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = False
