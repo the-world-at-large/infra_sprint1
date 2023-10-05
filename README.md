@@ -1,6 +1,6 @@
 # Kittygram
 ***
-## Kittygram - это проект для обмена фотографиями https://kittttygrammm.hopto.org
+## Kittygram - это проект для обмена фотографиями https://kittttygrammm.hopto.org:
 ***
 ## Технологии:
 * Python 3.10
@@ -12,11 +12,10 @@
 * Certbot
 ***
 ## Установка на локальном сервере
-1. Клонируйте проект из репозитория:   
-```git clone git@github.com:the-world-at-large/infra_sprint1.git```
+1. Клонируйте проект из репозитория: ```git clone git@github.com:the-world-at-large/infra_sprint1.git```
 2. Создайте виртуальное окружение: ```python3 -m venv venv```
 3. Установите зависимости: ```pip install -r requirements.txt```
-4. Создайте файл ***.env*** в корневой папке (в папке с manage.py), добавьте SECRET_KEY
+4. Создайте файл ***.env*** в корневой папке (в папке с manage.py), добавьте SECRET_KEY.
 ***
 # Развёртывание проекта на удалённом сервере
 ***
@@ -60,10 +59,11 @@
 ``npm i``  
 ***
 ### Установка и запуск Gunicorn
-```pip install gunicorn==20.1.0```   
+Установите Gunicorn:  
+```pip install gunicorn==20.1.0```  
 Создайте юнит для Gunicorn:  
 ```sudo nano /etc/systemd/system/gunicorn.service ```  
-В файле gunicorn.service опишите конфигурацию процесса:
+В файле gunicorn.service опишите конфигурацию процесса:  
 ```html
 [Unit]
 Description=gunicorn daemon 
