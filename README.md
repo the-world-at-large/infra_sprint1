@@ -3,8 +3,8 @@
 ## Kittygram - это проект для обмена фотографиями: https://kittttygrammm.hopto.org
 ***
 ## Технологии:
-* Python 3.10
-* Django3
+* Python 3.9
+* Django2
 * Nginx
 * Gunicorn
 * React
