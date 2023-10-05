@@ -1,6 +1,6 @@
 # Kittygram
 ***
-## Kittygram - это проект для обмена фотографиями - https://kittttygrammm.hopto.org
+## Kittygram - это проект для обмена фотографиями https://kittttygrammm.hopto.org
 ***
 ## Технологии:
 * Python 3.10
@@ -12,7 +12,7 @@
 * Certbot
 ***
 ## Установка на локальном сервере
-1. Клонируйте проект из репозитория:
+1. Клонируйте проект из репозитория:   
 ```git clone git@github.com:the-world-at-large/infra_sprint1.git```
 2. Создайте виртуальное окружение: ```python3 -m venv venv```
 3. Установите зависимости: ```pip install -r requirements.txt```
@@ -43,24 +43,24 @@
 Создайте виртуальное окружение:  
 ```python3 -m venv venv ```  
 Активируйте виртуальное окружение:  
-```source venv/bin/activate```
+```source venv/bin/activate```                     
 Установите зависимости:  
 ```pip install -r requirements.txt```  
 Выполните миграции:   
 ```python manage.py migrate```  
 Создайте супер-пользователя:  
-```python manage.py createsuperuser```
+```python manage.py createsuperuser```   
 В файле settings.py в ALLOWED_HOSTS добавьте IP-адрес сервера, а также '127.0.0.1', 'localhost' и доменное имя.  
 ***
 ### Запуск фронтенда
 Установите менджер пакетов npm на сервере:  
 ```curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\```  
-```sudo apt-get install -y nodejs```
+```sudo apt-get install -y nodejs```   
 Установите зависимости фронтенда из директории ***infra_sprint1/frontend***:  
 ``npm i``  
 ***
 ### Установка и запуск Gunicorn
-```pip install gunicorn==20.1.0```
+```pip install gunicorn==20.1.0```   
 Создайте юнит для Gunicorn:  
 ```sudo nano /etc/systemd/system/gunicorn.service ```  
 В файле gunicorn.service опишите конфигурацию процесса:
@@ -88,7 +88,7 @@ WantedBy=multi-user.target
 ```sudo apt install nginx -y```  
 Запустите Nginx:  
 ```sudo systemctl start nginx```  
-Укажите брандмауэру порты, которые должны оставаться открытыми:
+Укажите брандмауэру порты, которые должны оставаться открытыми:   
 ```sudo ufw allow 'Nginx Full'```  
 ```sudo ufw allow OpenSSH```  
 Включите брандмауэр:  
@@ -132,7 +132,7 @@ server {
 ```STATIC_URL = 'static_backend'```
 ```STATIC_ROOT = BASE_DIR / 'static_backend'```  
 С активированным виртуальным окружением выполните команду:  
-```python manage.py collectstatic```
+```python manage.py collectstatic```   
 Перейдите в корневую папку проекта и выполните команду:  
 ```sudo cp -r infra_sprint1/backend/static_backend/ /var/www/kittygram/```  
 ***
