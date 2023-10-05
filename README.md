@@ -168,4 +168,4 @@ server {
 
 Автор проекта | Мой вебсайт
 ------------- | -------------
-[the-world-at-large](https://images3.memedroid.com/images/UPLOADED449/62a36080ec892.jpeg)
+[the-world-at-large](https://github.com/the-world-at-large) | [hehehehe.lol](https://images3.memedroid.com/images/UPLOADED449/62a36080ec892.jpeg)
